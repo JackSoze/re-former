@@ -1,40 +1,4 @@
-<div class="container">
-  <div class="lead h3 text-capitalize">Enter your details here</div>
-  <div class="row">
-    <div class="col-sm-6">
-      <%= form_with(model: @user) do |form| %>
-        <div class="form-group mb-3">
-          <%= form.label :username, "Enter Username:", class: "form-label" %>
-          <%= form.text_field :username, class: "form-control #{'is-invalid' if @user.errors[:username].any?}", placeholder: "Your Name Here" %>
-          <% if @user.errors[:username].any? %>
-            <div class="text-danger">
-              <%= @user.errors[:username].first %>
-            </div>
-          <% end %>
-        </div>
-        <div class="form-group mb-3">
-          <%= form.label :email, "Enter Email:",class: "form-label" %>
-          <%= form.email_field :email, placeholder: "email.com", class: "form-control #{'is-invalid' if @user.errors[:email].any?}" %>
-          <% if @user.errors[:email].any? %>
-            <div class="text-danger">
-              <%= @user.errors[:email].first %>
-            </div>
-          <% end %>
-        </div>
-        <div class="form-group mb-3">
-          <%= form.label :password, "Enter Password:", class: "form-label" %>
-          <%= form.password_field :password, class: "form-control #{'is-invalid' if @user.errors[:password].any?}", placeholder: "xxxxxxx"  %>
-          <% if @user.errors[:password].any? %>
-            <div class="text-danger">
-              <%= @user.errors[:password].first %>
-            </div>
-          <% end %>
-        </div>
-        <div class="d-grid col-6 mx-auto mx-md-0 mb-3">
-          <%= form.submit "Submit", class: "btn btn-primary mb-3" %>
-        </div>
-      <% end %>
-    </div>
-  </div>
-</div>
+<div class="h3 container">New User Form</div>
+<div class="new_user_form">
+  <%= render partial: "user_form", locals: {user: @user}%>
 </div>

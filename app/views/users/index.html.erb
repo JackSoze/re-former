@@ -1,0 +1,13 @@
+<div class="container">
+  <div><%= render 'nav_bar' %></div>
+  <h1>A list of the users</h1>
+  <ul>
+    <% @users.each do |user| %>
+      <li>
+        <a href="users/<%=user.id%>">
+          <%=user.username%>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+</div>
